@@ -1,0 +1,33 @@
+name: Build and Push to ACR
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to ACR
+        run: |
+          echo "${{ secrets.ACR_PASS }}" | docker login \
+            crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com \
+            -u "${{ secrets.ACR_USER }}" --password-stdin
+
+      - name: Build and Push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:latest
+            crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

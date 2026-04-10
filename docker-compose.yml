@@ -1,0 +1,12 @@
+services:
+  web:
+    image: crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
