@@ -30,5 +30,6 @@ jobs:
           tags: |
             crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:latest
             crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:${{ github.sha }}
-          cache-from: type=registry,ref=crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:buildcache
-          cache-to: type=registry,ref=crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:buildcache,mode=max,image-manifest=true,oci-mediatypes=true
+          cache-from: type=registry,ref=crpi-5mbh0qm9ti5c2olw.cn-wulanchabu.personal.cr.aliyuncs.com/shuanbaoai/sub2api-help:latest
+          cache-to: type=inline
+          provenance: false
