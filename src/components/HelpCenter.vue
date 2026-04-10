@@ -2,17 +2,25 @@
   <div class="rounded-2xl bg-white p-3 shadow-sm dark:bg-gray-900 sm:p-6">
     <!-- Header -->
     <div class="mb-4 sm:mb-8">
-      <h3
-        class="mb-3 flex items-center text-xl font-bold text-gray-900 dark:text-gray-100 sm:mb-4 sm:text-2xl"
-      >
-        <span class="mr-2 text-blue-600 sm:mr-3">
-          <svg class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      <div class="mb-4 flex items-center gap-3">
+        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 shadow-lg shadow-blue-500/20 sm:h-12 sm:w-12">
+          <svg class="h-6 w-6 text-white sm:h-7 sm:w-7" viewBox="0 0 64 64" fill="none">
+            <g stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 50V18a6 6 0 0 1 6-6h28v44H22a6 6 0 0 1 0-12h28"/>
+              <path d="M28 24a4 4 0 1 1 6 3.2c-1.2.9-2 1.8-2 3.3"/>
+            </g>
+            <circle cx="32" cy="37" r="2" fill="currentColor"/>
           </svg>
-        </span>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 sm:text-xl">Sub2API 帮助中心</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 sm:text-sm">Help Center · 一站式 AI 编程工具配置指南</p>
+        </div>
+      </div>
+      <h4 class="mb-1 text-base font-semibold text-gray-800 dark:text-gray-200 sm:text-lg">
         {{ currentToolTitle }} 使用教程
-      </h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 sm:text-lg">
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
         跟着这个教程，你可以轻松安装并使用 {{ currentToolTitle }}。
       </p>
     </div>
